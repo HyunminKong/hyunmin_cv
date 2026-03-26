@@ -277,7 +277,7 @@ main {
 .about-card:hover,
 .fact-card:hover,
 .timeline-item:hover,
-.thesis-card:hover:hover,
+.thesis-card:hover,
 .publication-card:hover,
 .project-card:hover,
 .contact-card:hover {
@@ -392,21 +392,43 @@ main {
 }
 
 .section-heading h2 {
-  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.28em;
+  width: fit-content;
+  max-width: 100%;
   font-size: clamp(2.6rem, 5vw, 4.6rem);
   line-height: 0.95;
+}
+
+.title-emoji {
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.title-text {
+  position: relative;
+  display: inline-block;
   padding-bottom: 14px;
 }
 
-.section-heading h2::after {
+.title-text::after {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 110px;
+  width: 100%;
   height: 4px;
   border-radius: 999px;
   background: currentColor;
   content: "";
+}
+
+.subsection-heading .title-text {
+  padding-bottom: 10px;
+}
+
+.subsection-heading .title-text::after {
+  height: 3px;
 }
 
 .section-kicker {
@@ -441,6 +463,107 @@ main {
   padding: 30px;
   line-height: 1.9;
   font-size: 1.03rem;
+}
+
+.subsection-block {
+  margin-top: 38px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(23, 19, 17, 0.1);
+}
+
+.subsection-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.subsection-heading h3 {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.26em;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  font-family: "Archivo Black", "IBM Plex Sans KR", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.awards-subsection {
+  margin-top: 30px;
+}
+
+.awards-heading {
+  margin-bottom: 12px;
+}
+
+.awards-heading .section-kicker {
+  font-size: 0.72rem;
+}
+
+.awards-heading h3 {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+}
+
+.award-summary-card {
+  padding: 20px 22px;
+  background: rgba(255, 248, 241, 0.82);
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 12px 24px rgba(40, 28, 20, 0.05);
+}
+
+.award-list {
+  display: grid;
+}
+
+.award-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.award-item + .award-item {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(23, 19, 17, 0.08);
+}
+
+.award-date {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(221, 91, 34, 0.09);
+  color: #a3572f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.award-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.award-copy strong {
+  display: block;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.38;
+  color: var(--ink);
+}
+
+.award-copy p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
 }
 
 .fact-grid {
@@ -806,8 +929,26 @@ main {
     flex-direction: column;
   }
 
+  .subsection-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
   .section-heading h2 {
     font-size: 2.7rem;
+  }
+
+  .subsection-heading h3 {
+    font-size: 2rem;
+  }
+
+  .award-item + .award-item {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .award-summary-card {
+    padding: 18px;
   }
 
   .year-header {
