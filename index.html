@@ -11,42 +11,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="#top">HK</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#top">Hyunmin Kong</a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#education">Education</a>
+        <a href="#thesis">Thesis</a>
         <a href="#publications">Publications</a>
+        <a href="#certifications">Certifications</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main id="top">
-      <section class="hero reveal">
-        <div class="hero-copy">
-          <div class="hero-intro">
-            <figure class="profile-figure hero-profile">
-              <img class="profile-image" src="hyunmin.jpg" alt="Portrait of Hyunmin Kong">
-            </figure>
-            <div class="hero-heading">
-              <p class="eyebrow">Media System Lab (MSL), SKKU</p>
-              <h1>Hyunmin Kong</h1>
-              <p class="hero-role">
-                Ph.D. Student in Electrical and Computer Engineering
-              </p>
-            </div>
-          </div>
+  <main id="top">
+    <section class="hero reveal">
+      <div class="section-shell hero-shell">
+        <div class="hero-lead">
+          <p class="hero-kicker">Media System Lab (MSL) · Sungkyunkwan University</p>
+          <h1>Hyunmin Kong</h1>
+          <p class="hero-subtitle">Ph.D. Student Research Portfolio</p>
+          <span class="hero-divider" aria-hidden="true"></span>
           <p class="hero-summary">
-            Multivariate time series analysis and autonomous driving scene analysis
-            for robust, deployable AI systems.
+            Researching multivariate time series analysis, root cause analysis,
+            causal discovery, robust detection, 3D scene representation, and
+            uncertainty-aware AI systems.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#publications">View Publications</a>
@@ -54,19 +51,22 @@
           </div>
         </div>
 
-        <aside class="hero-card">
-          <div class="hero-card-inner">
-            <section class="keyword-panel" aria-labelledby="hero-keywords-title">
-              <p id="hero-keywords-title" class="hero-panel-label">Research Experties</p>
-              <div class="keyword-list">
-                <span>Multivariate Time Series Analysis</span>
-                <span>Root Cause Analysis</span>
-                <span>Causality</span>
-                <span>Robust Detection</span>
-                <span>3D Scene Representation</span>
-                <span>Uncertainty</span>
-              </div>
-            </section>
+        <aside class="hero-side">
+          <figure class="hero-portrait-card">
+            <img class="profile-image" src="hyunmin.jpg" alt="Portrait of Hyunmin Kong">
+          </figure>
+
+          <section class="hero-panel" aria-labelledby="hero-keywords-title">
+            <p id="hero-keywords-title" class="hero-panel-label">Research Experties</p>
+            <div class="keyword-list">
+              <span>Multivariate Time Series Analysis</span>
+              <span>Root Cause Analysis</span>
+              <span>Causality</span>
+              <span>Robust Detection</span>
+              <span>3D Scene Representation</span>
+              <span>Uncertainty</span>
+            </div>
+
             <div class="stat-grid">
               <div class="stat">
                 <span class="stat-label">Affiliation</span>
@@ -82,31 +82,64 @@
               </div>
               <div class="stat">
                 <span class="stat-label">Focus</span>
-                <strong>AI Research</strong>
+                <strong>Causal AI</strong>
               </div>
             </div>
-          </div>
+          </section>
         </aside>
-      </section>
+      </div>
+    </section>
 
-      <section id="about" class="content-section reveal">
+    <section id="about" class="section-band section-ivory reveal">
+      <div class="section-shell">
         <div class="section-heading">
           <p class="section-kicker">Profile</p>
           <h2>About</h2>
         </div>
-        <div class="about-card">
-          <p>
-            성균관대학교 Media System Lab에서 연구 중이며, Multivariate Time Series Analysis
-            , Autonomous Driving Scene Analysis, 3D Scene Understanding에 관심을 두고 있습니다.
-          </p>
-        </div>
-      </section>
 
-      <section id="education" class="content-section reveal">
+        <div class="about-grid">
+          <article class="about-card about-story">
+            <p>
+              성균관대학교 Media System Lab에서 연구 중이며, 다변량 시계열에서의
+              원인 분석과 인과 발견, 강건한 객체 검출, 그리고 3D scene representation을
+              실용적 AI 시스템으로 연결하는 연구에 집중하고 있습니다.
+            </p>
+          </article>
+
+          <div class="fact-grid">
+            <article class="fact-card">
+              <span class="fact-label">Affiliation</span>
+              <strong>Media System Lab (MSL), SKKU</strong>
+            </article>
+            <article class="fact-card">
+              <span class="fact-label">Email</span>
+              <strong>khm1754@g.skku.edu</strong>
+            </article>
+            <a
+              class="fact-card fact-link"
+              href="https://scholar.google.com/citations?user=9vqlTzkAAAAJ&hl=ko&oi=ao"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="fact-label">Google Scholar</span>
+              <strong>View Profile</strong>
+            </a>
+            <article class="fact-card">
+              <span class="fact-label">Research Focus</span>
+              <strong>Time Series, Causality, 3D AI</strong>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section-band section-ivory reveal">
+      <div class="section-shell">
         <div class="section-heading">
           <p class="section-kicker">Academic Path</p>
           <h2>Education</h2>
         </div>
+
         <div class="timeline">
           <article class="timeline-item">
             <div class="timeline-date">2026.03 - Present</div>
@@ -132,13 +165,59 @@
             </div>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="publications" class="content-section reveal">
+    <section id="thesis" class="section-band section-gold reveal">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Graduate Research</p>
+          <h2>Thesis</h2>
+        </div>
+
+        <div class="thesis-grid">
+          <article class="thesis-card">
+            <p class="pub-meta">M.S. Thesis · Sungkyunkwan University</p>
+            <h3>Causal Discovery for Root Cause Analysis in Multivariate Time Series</h3>
+            <div class="paper-actions">
+              <a
+                class="paper-link"
+                href="https://dcollection.skku.edu/srch/srchDetail/000000190467"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Thesis
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section-band section-gold reveal">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Qualifications</p>
+          <h2>Certifications</h2>
+        </div>
+
+        <div class="credential-grid">
+          <article class="credential-card">
+            <p class="pub-meta">Language Certification</p>
+            <h3>OPIc</h3>
+            <p class="credential-score">IH</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section-band section-dark reveal">
+      <div class="section-shell">
         <div class="section-heading">
           <p class="section-kicker">Research Output</p>
-          <h2>Selected Publications</h2>
+          <h2>Publications</h2>
         </div>
+
         <div class="publication-years">
           <section class="year-group" aria-labelledby="pub-year-2026">
             <div class="year-header">
@@ -153,7 +232,7 @@
                 <div class="paper-actions">
                   <a
                     class="paper-link"
-                    href=""
+                    href="https://scholar.google.com/scholar?q=Gaussian+Process+Based+Causal+Discovery+for+Root+Cause+Analysis+in+Multivariate+Time+Series"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -242,13 +321,16 @@
             </div>
           </section>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="projects" class="content-section reveal">
+    <section id="projects" class="section-band section-ivory reveal">
+      <div class="section-shell">
         <div class="section-heading">
           <p class="section-kicker">Lab Work</p>
-          <h2>Research Projects</h2>
+          <h2>Projects</h2>
         </div>
+
         <div class="project-grid">
           <article class="project-card">
             <div class="project-topline">
@@ -267,13 +349,16 @@
             <p>온디바이스 AI 기반 수소 인프라 예지보전 플랫폼 개발</p>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="contact" class="content-section reveal">
+    <section id="contact" class="section-band section-dark reveal">
+      <div class="section-shell">
         <div class="section-heading">
           <p class="section-kicker">Reach Out</p>
           <h2>Contact</h2>
         </div>
+
         <div class="contact-panel">
           <a class="contact-card" href="mailto:khm1754@g.skku.edu">
             <span class="contact-label">Email</span>
@@ -286,16 +371,18 @@
             rel="noreferrer"
           >
             <span class="contact-label">Google Scholar</span>
-            <strong>Profile Link</strong>
+            <strong>View Profile</strong>
           </a>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer class="site-footer">
+  <footer class="site-footer">
+    <div class="section-shell footer-shell">
       <p>Hyunmin Kong · Media System Lab (MSL), Sungkyunkwan University</p>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
