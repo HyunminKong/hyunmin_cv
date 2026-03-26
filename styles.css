@@ -139,6 +139,8 @@ body::before {
 .hero-copy {
   position: relative;
   overflow: hidden;
+  display: grid;
+  gap: 24px;
   padding: 48px;
   border-radius: 40px;
 }
@@ -152,6 +154,19 @@ body::before {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(49, 95, 123, 0.16), transparent 70%);
   content: "";
+}
+
+.hero-intro {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-heading {
+  min-width: 0;
 }
 
 .eyebrow,
@@ -177,18 +192,20 @@ body::before {
 }
 
 .hero h1 {
-  font-size: clamp(3.4rem, 7vw, 6.2rem);
-  line-height: 0.92;
+  font-size: clamp(2.8rem, 5.3vw, 4.9rem);
+  line-height: 0.94;
   margin-top: 10px;
 }
 
 .hero-role {
-  margin: 22px 0 10px;
-  font-size: 1.2rem;
+  margin: 16px 0 0;
+  font-size: 1.12rem;
   font-weight: 600;
 }
 
 .hero-summary {
+  position: relative;
+  z-index: 1;
   max-width: 42rem;
   margin: 0;
   line-height: 1.75;
@@ -196,10 +213,12 @@ body::before {
 }
 
 .hero-actions {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 6px;
 }
 
 .button {
@@ -232,7 +251,7 @@ body::before {
 
 .hero-card {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   padding: 24px;
   border-radius: 32px;
   background:
@@ -246,10 +265,46 @@ body::before {
   width: 100%;
 }
 
+.keyword-panel {
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(24, 35, 49, 0.08);
+}
+
+.hero-panel-label {
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.keyword-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(248, 251, 255, 0.92);
+  border: 1px solid rgba(24, 35, 49, 0.08);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
 .profile-figure {
   margin: 0;
   overflow: hidden;
   aspect-ratio: 4 / 5;
+  max-width: 190px;
   border-radius: 24px;
   border: 1px solid rgba(24, 35, 49, 0.08);
   background: linear-gradient(180deg, rgba(225, 234, 243, 0.9), rgba(244, 248, 252, 0.95));
@@ -612,8 +667,18 @@ body::before {
     padding-top: 30px;
   }
 
+  .hero-intro {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .profile-figure {
+    max-width: 220px;
+    border-radius: 20px;
+  }
+
   .hero h1 {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
   }
 
   .stat-grid {
