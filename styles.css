@@ -456,8 +456,18 @@ main {
   text-decoration: none;
 }
 
+.fact-link {
+  background: linear-gradient(135deg, #ff7e45, #dd5b22);
+  border-color: rgba(221, 91, 34, 0.22);
+  box-shadow: 0 18px 34px rgba(221, 91, 34, 0.18);
+}
+
 .fact-label {
   color: var(--ink-soft);
+}
+
+.fact-link .fact-label {
+  color: rgba(255, 248, 241, 0.76);
 }
 
 .fact-card strong {
@@ -465,6 +475,25 @@ main {
   margin-top: 12px;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+.fact-link strong {
+  color: #fff8f1;
+}
+
+.fact-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  margin-top: 16px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 248, 241, 0.14);
+  color: #fff8f1;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .timeline {
@@ -509,7 +538,7 @@ main {
 }
 
 .timeline-content h3,
-.thesis-card h3 h3,
+.thesis-card h3,
 .publication-card h3,
 .project-card h3,
 .contact-card strong,
@@ -596,6 +625,11 @@ main {
   padding: 26px;
 }
 
+.publication-card {
+  display: flex;
+  flex-direction: column;
+}
+
 .publication-card h3 {
   font-size: 1.5rem;
   line-height: 1.18;
@@ -605,6 +639,26 @@ main {
 .pub-authors {
   color: var(--ink);
   font-weight: 700;
+}
+
+.paper-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.paper-keywords span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #f4ede3;
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  color: var(--ink);
+  font-size: 0.83rem;
+  font-weight: 600;
 }
 
 .project-topline {
