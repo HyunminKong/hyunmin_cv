@@ -225,12 +225,16 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   min-height: 48px;
   padding: 0 18px;
+  border: 1px solid transparent;
   border-radius: 999px;
   text-decoration: none;
+  font: inherit;
   font-weight: 700;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
 .button:hover,
@@ -250,7 +254,24 @@ main {
 .button-secondary {
   color: #fff8f1;
   background: rgba(255, 247, 239, 0.08);
-  border: 1px solid rgba(255, 247, 239, 0.18);
+  border-color: rgba(255, 247, 239, 0.18);
+}
+
+.button-print {
+  color: #fff8f1;
+  background: rgba(255, 247, 239, 0.12);
+  border-color: rgba(255, 247, 239, 0.22);
+}
+
+.button-print:hover,
+.button-print:focus-visible {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.button-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
 }
 
 .hero-side {
@@ -978,5 +999,251 @@ main {
     transform: none;
     transition: none;
     opacity: 1;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  html {
+    scroll-padding-top: 0;
+  }
+
+  body {
+    background: #ffffff;
+    color: #171311;
+    font-size: 10.5pt;
+    orphans: 3;
+    widows: 3;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  main {
+    display: block;
+  }
+
+  .site-header,
+  .site-footer,
+  .hero-actions,
+  .paper-actions {
+    display: none !important;
+  }
+
+  .hero,
+  .section-band,
+  .section-dark,
+  .section-ivory,
+  .section-gold {
+    background: #ffffff !important;
+    color: #171311 !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 0 0 16px;
+  }
+
+  .hero::before,
+  .hero::after,
+  .timeline::before {
+    display: none !important;
+  }
+
+  .section-band {
+    padding: 14px 0;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .section-shell,
+  .nav-shell {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) 280px;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .about-grid,
+  .fact-grid,
+  .thesis-grid,
+  .publication-years,
+  .year-group,
+  .publication-grid,
+  .project-grid,
+  .contact-panel,
+  .timeline {
+    display: block;
+  }
+
+  .about-grid > * + *,
+  .fact-grid > * + *,
+  .thesis-grid > * + *,
+  .publication-years > * + *,
+  .publication-grid > * + *,
+  .project-grid > * + *,
+  .contact-panel > * + *,
+  .timeline > * + * {
+    margin-top: 14px;
+  }
+
+  .section-heading,
+  .subsection-heading,
+  .year-header {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  .section-heading {
+    margin-bottom: 14px;
+  }
+
+  .subsection-heading {
+    margin-bottom: 10px;
+  }
+
+  .section-heading + .about-grid,
+  .section-heading + .timeline,
+  .section-heading + .thesis-grid,
+  .section-heading + .publication-years,
+  .section-heading + .project-grid,
+  .section-heading + .contact-panel,
+  .subsection-heading + .award-summary-card,
+  .year-header + .publication-grid {
+    break-before: avoid-page;
+    page-break-before: avoid;
+  }
+
+  .year-group {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .year-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .hero-kicker,
+  .hero-subtitle,
+  .hero-summary,
+  .section-dark .section-kicker,
+  .section-dark .section-heading h2,
+  .section-dark .year-title,
+  .pub-meta,
+  .project-period,
+  .contact-label,
+  .fact-label,
+  .stat-label,
+  .hero-panel-label,
+  .award-copy p,
+  .timeline-content p,
+  .project-card p,
+  .publication-card p,
+  .thesis-card p {
+    color: #4c433f !important;
+  }
+
+  .year-rule {
+    flex: 1 1 auto;
+    background: rgba(23, 19, 17, 0.14) !important;
+  }
+
+  .hero-portrait-card,
+  .hero-panel,
+  .about-card,
+  .fact-card,
+  .timeline-item,
+  .thesis-card,
+  .publication-card,
+  .project-card,
+  .contact-card,
+  .award-summary-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(23, 19, 17, 0.14) !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .hero-portrait-card {
+    min-height: auto;
+    padding: 8px;
+  }
+
+  .profile-image {
+    min-height: auto;
+    max-height: 300px;
+  }
+
+  .timeline {
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: block;
+    margin: 0;
+    padding: 20px 22px 20px 52px;
+  }
+
+  .timeline-item::before {
+    top: 22px;
+    left: 16px;
+    box-shadow: 0 0 0 6px rgba(239, 127, 67, 0.14);
+  }
+
+  .timeline-date {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .fact-link {
+    background: #ffffff !important;
+    border-color: rgba(23, 19, 17, 0.14) !important;
+    box-shadow: none !important;
+  }
+
+  .fact-link .fact-label,
+  .fact-link strong,
+  .fact-cta {
+    color: #171311 !important;
+  }
+
+  .fact-cta {
+    background: transparent !important;
+    padding: 0;
+    min-height: auto;
+    margin-top: 10px;
+  }
+
+  .keyword-list span,
+  .paper-keywords span,
+  .status,
+  .award-date {
+    border: 1px solid rgba(23, 19, 17, 0.12) !important;
+    box-shadow: none !important;
+  }
+
+  .title-text::after {
+    background: currentColor;
+  }
+
+  .reveal,
+  .js .reveal,
+  .js .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
