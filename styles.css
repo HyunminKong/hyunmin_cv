@@ -264,7 +264,6 @@ main {
 .fact-card,
 .timeline-item,
 .thesis-card,
-.credential-card,
 .publication-card,
 .project-card,
 .contact-card {
@@ -278,8 +277,7 @@ main {
 .about-card:hover,
 .fact-card:hover,
 .timeline-item:hover,
-.thesis-card:hover,
-.credential-card:hover,
+.thesis-card:hover:hover,
 .publication-card:hover,
 .project-card:hover,
 .contact-card:hover {
@@ -362,6 +360,10 @@ main {
   font-size: 1.16rem;
 }
 
+.stat-wide {
+  grid-column: 1 / -1;
+}
+
 .section-band {
   padding: 86px 0;
 }
@@ -427,7 +429,6 @@ main {
 .fact-card,
 .timeline-item,
 .thesis-card,
-.credential-card,
 .publication-card,
 .project-card,
 .contact-card {
@@ -508,8 +509,7 @@ main {
 }
 
 .timeline-content h3,
-.thesis-card h3,
-.credential-card h3,
+.thesis-card h3 h3,
 .publication-card h3,
 .project-card h3,
 .contact-card strong,
@@ -527,45 +527,25 @@ main {
 .timeline-content p,
 .publication-card p,
 .project-card p,
-.thesis-card p,
-.credential-card p {
+.thesis-card p {
   margin: 10px 0 0;
   line-height: 1.75;
   color: var(--ink-soft);
 }
 
-.thesis-grid,
-.credential-grid {
+.thesis-grid {
   display: grid;
+  grid-template-columns: minmax(0, 760px);
   gap: 18px;
 }
 
-.thesis-grid {
-  grid-template-columns: minmax(0, 760px);
-}
-
-.credential-grid {
-  grid-template-columns: minmax(0, 420px);
-}
-
-.thesis-card,
-.credential-card {
+.thesis-card {
   padding: 26px;
 }
 
 .thesis-card h3 {
   font-size: 2rem;
   line-height: 1.12;
-}
-
-.credential-card h3 {
-  font-size: 1.9rem;
-}
-
-.credential-score {
-  color: var(--ink);
-  font-size: 1.24rem;
-  font-weight: 700;
 }
 
 .publication-years {
@@ -703,8 +683,7 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .thesis-grid,
-  .credential-grid {
+  .thesis-grid {
     grid-template-columns: 1fr;
   }
 
@@ -796,7 +775,6 @@ main {
   .fact-card,
   .timeline-item,
   .thesis-card,
-  .credential-card,
   .publication-card,
   .project-card,
   .contact-card,
